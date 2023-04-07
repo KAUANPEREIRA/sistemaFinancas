@@ -3,27 +3,27 @@
 import { Item } from "../types/Item";
 export const items: Item[] = [
   {
-    date: new Date(2023, 4, 4),
+    date: new Date(2023, 4, 1),
     category: "food",
-    title: "MC Donalds",
+    title: "McDonalds",
     value: 32.12,
   },
   {
-    date: new Date(2023, 4, 4),
+    date: new Date(2023, 4, 3),
     category: "food",
-    title: "Burguer King",
+    title: "Burger King",
     value: 28,
   },
   {
     date: new Date(2023, 4, 4),
     category: "rent",
-    title: "Aluguel Apartamento",
+    title: "Aluguel Apt",
     value: 2300,
   },
   {
-    date: new Date(2023, 4, 4),
+    date: new Date(2023, 4, 5),
     category: "salary",
-    title: "Salario",
+    title: "Salário ACME",
     value: 4500,
   },
 ];

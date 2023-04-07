@@ -3,6 +3,7 @@ import * as C from "./App.styles";
 // import { Categorie } from "./types/Categorie";
 // import {categories} from './data/categories'
 import { useEffect, useState } from "react";
+import { TableArea } from "./components/TableArea";
 import { items } from "./data/items";
 import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter";
 import { Item } from "./types/Item";
@@ -11,6 +12,9 @@ const App = () => {
   const [list, setList] = useState(items);
   const [filteredList, setFilteredList] = useState<Item[]>([]);
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
+
+  console.log({ filteredList });
+  console.log({ items });
 
   // funcao que pega mes atual e gera nova lista
   useEffect(() => {
@@ -28,6 +32,7 @@ const App = () => {
         {/* area de inserção */}
 
         {/* tabela de itens */}
+        <TableArea list={filteredList} />
       </C.Body>
     </C.Container>
   );
