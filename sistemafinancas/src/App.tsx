@@ -4,6 +4,7 @@ import * as C from "./App.styles";
 // import {categories} from './data/categories'
 import { useEffect, useState } from "react";
 import { InfoArea } from "./components/InfoArea";
+import { InputArea } from "./components/InputArea";
 import { TableArea } from "./components/TableArea";
 import { categories } from "./data/categories";
 import { items } from "./data/items";
@@ -48,7 +49,13 @@ const App = () => {
     setCurrentMonth(newMonth);
   };
 
-  console.log({ list });
+  const handleAddItem = (item: Item) => {
+    //faznedo uma copia e adicionando um novo item
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
+  };
+
   return (
     <C.Container>
       <C.Header>
@@ -64,6 +71,7 @@ const App = () => {
         />
 
         {/* area de inserção */}
+        <InputArea onAdd={handleAddItem} />
 
         {/* tabela de itens */}
         <TableArea list={filteredList} />
